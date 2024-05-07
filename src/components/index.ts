@@ -1,0 +1,6 @@
+export { default as Navbar } from "./navbar/navbar"
+export { default as Footer } from "./footer/footer"
+export { default as Layout } from "./layout/layout"
+export { default as Hero } from "./Hero/Hero"
+export { default as Sidebar } from "./SideBar/Sidebar" 
+export { default as Content } from "./Content/Content" 
