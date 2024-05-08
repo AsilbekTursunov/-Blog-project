@@ -63,53 +63,13 @@ const Navbar = () => {
               px: 0,
             }}
           >
-            <img src={"https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"}  onClick={()=> router.push(`/`)} style={logoStyle} alt="logo of sitemark" />
-            <Box sx={{ display: { xs: "none", md: "flex" }, color: "#fff" }}>
-              <MenuItem onClick={() => scrollToSection("features")} sx={{ py: "6px", px: "12px" }}>
-                <Typography variant="body2" color="#fff">
-                  Home
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={() => scrollToSection("testimonials")} sx={{ py: "6px", px: "12px" }}>
-                <Typography variant="body2" color="#fff">
-                  Categories
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={() => scrollToSection("highlights")} sx={{ py: "6px", px: "12px" }}>
-                <Typography variant="body2" color="#fff">
-                  Blog
-                </Typography>
-              </MenuItem>
-            </Box>
-          </Box>
-          <Box sx={{ display: { sm: "", md: "none" } }}>
-            <Button variant="text" color="primary" aria-label="menu" onClick={() => setOpen(prevState => !prevState)} sx={{ minWidth: "30px", p: "4px" }}>
-              <MenuIcon />
-            </Button>
-            <Drawer anchor="left" open={open} onClose={() => setOpen(prevState => !prevState)}>
-              <Box sx={{ backgroundColor: "#0e1924", color: "white" }}>
-                <Box sx={{ display: "flex", p: 2, justifyContent: "flex-end" }}>
-                  <CloseIcon sx={{ width: 20, height: 20 }} onClick={() => setOpen(prevState => !prevState)} />
-                </Box>
-                <Box
-                  sx={{
-                    minWidth: "100dvw",
-                    height: "100vh",
-                    flexGrow: 1,
-                  }}
-                >
-                  <MenuItem onClick={() => scrollToSection("features")} sx={{ justifyContent: "center" }}>
-                    <Button> Home</Button>
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("testimonials")} sx={{ justifyContent: "center" }}>
-                    <Button> Categories</Button>
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("highlights")} sx={{ justifyContent: "center" }}>
-                    <Button> Blog</Button>
-                  </MenuItem>
-                </Box>
-              </Box>
-            </Drawer>
+            <img
+              src={"https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"}
+              onClick={() => router.push(`/`)}
+              style={logoStyle}
+              alt="logo of sitemark"
+            />
+            <Box sx={{ display: { xs: "none", md: "flex" }, color: "#fff" }}></Box>
           </Box>
         </Toolbar>
       </AppBar>

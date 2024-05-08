@@ -13,14 +13,15 @@ import "swiper/css/navigation"
 import { format } from "date-fns"
 import { HeroProps } from "./hero.props"
 import { estimatedCalculateTimeToRead } from "@/helper/time-calculate"
+import { useRouter } from "next/router"
 const Hero = ({ posts }: HeroProps) => { 
-
+ const router = useRouter()
   return (
     <Box width={"100%"} sx={{}}>
       <Swiper modules={[Navigation]} className="mySwiper" loop={true}>
         {posts.map(item => (
           <SwiperSlide key={item.title}>
-            <Box>
+            <Box onClick={()=>router.push(`/blog-details/${item.slug}`)} sx={{cursor:'pointer'}}>
               <Box sx={{ position: "relative", width: "100%", height: { xs: "300px", lg: "600px" } }}>
                 <Image src={item.coverImage.url} alt={item.title} fill style={{ objectFit: "cover" }} />
                 <Box

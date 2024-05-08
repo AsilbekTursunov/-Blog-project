@@ -5,10 +5,11 @@ import { Box } from "@mui/material"
 import { BlogServices } from "@/services/blog-services"
 import { GetServerSideProps } from "next"
 import { BlogTypes } from "@/interfaces/blog-interface"
+import SEO from "@/components/layout/seo/seo"
 const Home = ({ posts, lastPosts, category }: HomePageProps) => {
   return (
-    <>
-      <Layout >
+    <SEO metaTitle="IT Articles Blogs">
+      <Layout key={"main-page"}>
         <Hero posts={posts.slice(0, 3)} />
         <Box sx={{ backgroundColor: "#0e1924" }}>
           <Box sx={{ width: { xs: "100%", lg: "80%" }, margin: { xs: "", lg: "auto" }, display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "10px", padding: "20px" }}>
@@ -17,7 +18,7 @@ const Home = ({ posts, lastPosts, category }: HomePageProps) => {
           </Box>
         </Box>
       </Layout>
-    </>
+    </SEO>
   )
 }
 export default Home

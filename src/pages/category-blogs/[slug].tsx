@@ -1,22 +1,26 @@
-import { Content, Layout, Sidebar } from "@/components" 
+import { Content, Layout, Sidebar } from "@/components"
+import SEO from "@/components/layout/seo/seo"
 import { BlogTypes } from "@/interfaces/blog-interface"
 import { BlogServices } from "@/services/blog-services"
-import { Box  } from "@mui/material" 
-import { GetServerSideProps } from "next" 
+import { Box } from "@mui/material"
+import { GetServerSideProps } from "next"
+import { useRouter } from "next/router"
 import React from "react"
 
 const CategoryDetailsBlog = ({ blogs, lastPosts, category }: CareforBlogsTypes) => {
-  
+  const router = useRouter()
 
   return (
-    <Layout>
-      <Box sx={{ backgroundColor: "#0e1924" }}>
-        <Box sx={{ width: { xs: "100%", lg: "80%" }, margin: { xs: "", lg: "auto" }, display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "10px", padding: "20px" }}>
-          <Sidebar lastPosts={lastPosts} category={category} />
-          <Content posts={blogs} />
+    <SEO metaTitle={`${router.query.slug}`}>
+      <Layout>
+        <Box sx={{ backgroundColor: "#0e1924" }}>
+          <Box sx={{ width: { xs: "100%", lg: "80%" }, margin: { xs: "", lg: "auto" }, display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "10px", padding: "20px" }}>
+            <Sidebar lastPosts={lastPosts} category={category} />
+            <Content posts={blogs} />
+          </Box>
         </Box>
-      </Box>
-    </Layout>
+      </Layout>
+    </SEO>
   )
 }
 
