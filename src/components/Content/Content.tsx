@@ -12,7 +12,7 @@ const Content = ({ posts }: ContentTypes) => {
     <Box sx={{ minHeight: "200vh", width: { xs: "100%", md: "70%" } }}>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "20px", width: "100%" }}>
         {posts.map(item => (
-          <Box onClick={()=> router.push(`/blog-details/${item.slug}`)} sx={{cursor:'pointer'}}>
+          <Box key={item.id} onClick={()=> router.push(`/blog-details/${item.slug}`)} sx={{cursor:'pointer'}}>
             <Box sx={{ background: "rgb(9, 9, 9, .4)", borderRadius: "10px", p: 3 }} key={item.id}>
               <Box sx={{ position: "relative", width: "100%", height: { xs: "200px", md: "300px", lg: "400px" } }}>
                 <Image src={item.coverImage.url} fill alt={item.coverImage.url} style={{ borderRadius: "10px", objectFit: "cover" }} />
